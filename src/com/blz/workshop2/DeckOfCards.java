@@ -67,7 +67,20 @@ public class DeckOfCards {
 		System.out.println("\nSequence of cards are below : ");
 		for (int i = 1; i <= player; i++) {
 			System.out.println("\nPlayer " + i + " Getting card.............");
+		//}
+	}
+
+	public static void shuffleCard() {
+		System.out.println("shuffling the cards before Distribution");
+		ArrayList<String> temp = new ArrayList<String>();
+		while (!deckCards.isEmpty()) {
+			int sufCard = (int) (Math.random() * deckCards.size());
+			temp.add(deckCards.get(sufCard));
+			deckCards.remove(sufCard);
 		}
+		deckCards = temp;
+		toDisplay(deckCards);
+
 	}
 
 	// Main class
@@ -79,4 +92,5 @@ public class DeckOfCards {
 		deckOfCardsGame.seqOfPlayer(4);
 
 	}
+
 }
